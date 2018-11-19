@@ -26,8 +26,9 @@ public class Server {
 		
 		try
 		{
+			//creates registry at port 1099.
 			Registry rmireg = LocateRegistry.createRegistry(1099);
-			rmireg.rebind("Calculator", new RMI());
+			rmireg.rebind("Calculator", new RMI()); //binds the name "Calculator" with the remote object - rebinds if one exist already.
 			System.out.println((String.valueOf(new Date()) + ": Server is Connected."));
 //			screen.append((String.valueOf(new Date()) + ": Server is Connected."));
 		}
